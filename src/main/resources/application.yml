@@ -1,1 +1,11 @@
-
+mock:
+  requests:
+    - path: sample/path
+      method: POST
+      headers:
+        sh: shv
+      params:
+        sp: spv
+      response:
+        status: OK,
+        body: "body"
