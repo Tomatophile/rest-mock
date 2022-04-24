@@ -1,1 +1,27 @@
-
+mock:
+  requests:
+    - path: example # REQUIRED
+      method: GET # OPTIONAL | If undefined - will match any method
+      headers: # OPTIONAL
+        header-name: value # <header name>: <header value>
+      allow-any-headers: true # OPTIONAL | Default - true | Defined before headers still must match, but other will be ignored
+      params: # OPTIONAL
+        param-name: value # <param name>: <param value>
+      allow-any-params: true # OPTIONAL | Default - true | Defined before params still must match, but other will be ignored
+      body: value # OPTIONAL | If undefined - will require empty request body
+      allow-any-body: true # OPTIONAL | Default - false | Body content will be ignored even body tag before is defined
+      response: # REQUIRED
+        status: OK # REQUIRED
+        headers: # OPTIONAL
+          header-name: value # <header name>: <header value>
+        body: | # OPTIONAL
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <title>Example mock page</title>
+          </head>
+          <body>
+            <p>It's exaple mock page</p>
+          </body>
+          </html>
